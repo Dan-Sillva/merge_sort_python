@@ -1,3 +1,5 @@
+import random
+
 def merge(vetor, start, end, middle):
     n1 = middle - start + 1
     n2 = end - middle
@@ -44,9 +46,13 @@ def mergesort(vetor, start, end):
         merge(vetor, start, end, middle)
 
 
-n = [12, 43, 21, 90, 1, 7, 2, 67, 11, 13, 4]
-g = len(n)
+x = int(input('Digite o tamanho do vetor: '))
+n = [0] * x
+
+for k in range(x):
+    n[k] = random.randint(1, 100)
 
 print('\nVetor de entrada: {}'.format(n))
+g = len(n)
 mergesort(n, 0, g-1)
 print('\n\nVetor de saida: {}'.format(n))
